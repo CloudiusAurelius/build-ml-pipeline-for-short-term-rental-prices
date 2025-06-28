@@ -74,4 +74,5 @@ def test_price_range(data: pd.DataFrame, min_price: float, max_price: float):
     """
     Test that the price is between the specified minimum and maximum value.
     """
-    assert data['price'].between(min_price, max_price).all(), "Price values are not within the expected range."
+    assert data['price'].between(min_price, max_price).all(), \
+        "Price values are not within the expected range."
