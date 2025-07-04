@@ -118,3 +118,4 @@ multirun/
 # Own additions
 # Ignore data files
 *.csv
+run_release.sh

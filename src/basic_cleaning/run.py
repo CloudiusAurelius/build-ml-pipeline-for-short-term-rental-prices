@@ -46,6 +46,11 @@ def go(args):
     logger.info(f"Filtering dataset with min_price={args.min_price} and max_price={args.max_price}")
     df = df[(df['price'] >= args.min_price) & (df['price'] <= args.max_price)]
 
+    # Remove rows outside the proper geolocation range
+    logger.info("Removing rows with invalid geolocation")
+    idx = df['longitude'].between(-74.25, -73.50) & df['latitude'].between(40.5, 41.2)
+    df = df[idx].copy()
+    
     # Save the cleaned dataset to a new artifact
     output_path = args.output_artifact
     logger.info(f"Saving cleaned dataset to {output_path}")
