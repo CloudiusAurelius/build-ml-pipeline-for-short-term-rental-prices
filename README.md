@@ -1,4 +1,23 @@
 # Build an ML Pipeline for Short-Term Rental Prices in NYC
+
+## Notes on the Project
+This is my implementation of the project of the Udacity Nanodegree "Machine Learning DevOps Engineer".
+
+### Project Highlights
+
+- Developed a modular machine learning pipeline leveraging Hydra for configuration management and MLflow for experiment tracking and orchestration.
+
+- Packaged the project using Conda environments to ensure reproducibility across different stages of the workflow.
+
+- Integrated Weights & Biases (W&B) to log model artifacts, metrics, and parameters for comprehensive experiment tracking.
+
+- Trained and tuned a Random Forest model using NYC Airbnb listing data to - predict rental prices.
+
+- Automated the end-to-end pipeline using MLflow Projects, enabling structured execution of tasks via run.py.
+
+
+# Original README from Udacity 
+
 You are working for a property management company renting rooms and properties for short periods of 
 time on various rental platforms. You need to estimate the typical price for a given property based 
 on the price of similar properties. Your company receives new data in bulk every week. The model needs 
