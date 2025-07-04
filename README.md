@@ -10,8 +10,9 @@ This is my implementation of the project of the Udacity Nanodegree "Machine Lear
 - Packaged the project using Conda environments to ensure reproducibility across different stages of the workflow.
 
 - Integrated Weights & Biases (W&B) to log model artifacts, metrics, and parameters for comprehensive experiment tracking.
+   - Link: https://wandb.ai/cloudius-aurelius/nyc_airbnb
 
-- Trained and tuned a Random Forest model using NYC Airbnb listing data to - predict rental prices.
+- Trained and tuned a Random Forest model using NYC Airbnb listing data to predict rental prices.
 
 - Automated the end-to-end pipeline using MLflow Projects, enabling structured execution of tasks via run.py.
 
