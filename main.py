@@ -16,7 +16,7 @@ _steps = [
     # NOTE: We do not include this in the steps so it is not run by mistake.
     # You first need to promote a model export to "prod" before you can run this,
     # then you need to run this step explicitly
-#    "test_regression_model"
+    "test_regression_model"
 ]
 
 
@@ -123,7 +123,7 @@ def go(config: DictConfig):
                 "stratify_by": config['modeling']['stratify_by'],
                 "rf_config": rf_config,
                 "max_tfidf_features": config['modeling']['max_tfidf_features'],
-                "output_artifact": config['modeling']['output_artifact']                
+                "output_artifact": "model_export"
                 },
             )
 
@@ -133,7 +133,14 @@ def go(config: DictConfig):
             # Implement here #
             ##################
 
-            pass
+             _ = mlflow.run(
+                f"{config['main']['components_repository']}/train_val_test_split",                
+                "main",
+                parameters={
+                "mlflow_model": "model_export:latest",
+                "test_dataset": "test_data.csv:latest"
+                },
+            )
 
 
 if __name__ == "__main__":
