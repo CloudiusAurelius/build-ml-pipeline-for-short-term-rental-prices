@@ -134,7 +134,7 @@ def go(config: DictConfig):
             ##################
 
              _ = mlflow.run(
-                f"{config['main']['components_repository']}/train_val_test_split",                
+                f"{config['main']['components_repository']}/test_regression_model",
                 "main",
                 parameters={
                 "mlflow_model": "model_export:latest",
